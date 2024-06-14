@@ -6,9 +6,9 @@ import styles from "./header.module.css";
 
 export default function Header() {
   return (
-    <header className="fixed w-full py-5 bg-red-50">
+    <header className="fixed w-full z-50 py-5">
       <div
-        className="container mx-auto flex justify-between items-center"
+        className="container mx-auto flex justify-between items-center text-white"
         style={{ fontFamily: "var(--font-lato)" }}
       >
         <Link href={paths.home}>
@@ -27,10 +27,9 @@ export default function Header() {
           <Link className={styles.link} href={paths.login}>
             Login
           </Link>
-          <Button className="px-10" variant="outline">
-            {" "}
+          <button className="border rounded px-4 py-1 hover:scale-105 duration-200">
             Call Us
-          </Button>
+          </button>
         </div>
       </div>
     </header>
