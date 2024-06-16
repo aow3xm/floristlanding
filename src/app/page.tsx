@@ -17,7 +17,10 @@ export default function Home() {
           <h1 className="text-4xl lg:text-6xl font-semibold">
             Nature&apos;s Beauty Delivered to You
           </h1>
-          <p style={{fontFamily:'var(--font-raleway)'}} className="text-md lg:text-lg tracking-normal lg:tracking-wide">
+          <p
+            style={{ fontFamily: "var(--font-raleway)" }}
+            className="text-md lg:text-lg tracking-normal lg:tracking-wide"
+          >
             Nature&apos;s beauty is just a click away with our online flower and
             plant shop. We offer a wide variety of flowers that will bring a
             touch of nature to your home!
@@ -33,6 +36,7 @@ export default function Home() {
           </div>
         </div>
       </div>
+      <div className="">Contact</div>
     </main>
   );
 }
