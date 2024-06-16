@@ -38,7 +38,7 @@ export default function Home() {
       </div>
       {/* -------------------------------------------------------------------------------------------------------------------- */}
       <div className="container mx-auto flex flex-col lg:flex-row justify-evenly gap-5 lg:gap-0">
-        <div className="h-80 lg:h-96 w-full lg:w-96 bg-white p-10 border rounded-xl drop-shadow-md space-y-5 text-green-900">
+        <div className="h-full lg:h-96 w-full lg:w-96 bg-white p-10 border rounded-xl drop-shadow-md space-y-5 text-green-900">
           <Image src={IndoorSVG} alt="indoor" width={75} height={75} />
           <h3 className="text-2xl font-bold">Indoor Plants</h3>
           <p className="lg:text-lg">
@@ -46,7 +46,7 @@ export default function Home() {
             selection of outdoor plants
           </p>
         </div>
-        <div className="h-80 lg:h-96 w-full lg:w-96 bg-green-700 text-white p-10 border rounded-xl drop-shadow-md space-y-5 ">
+        <div className="h-full lg:h-96 w-full lg:w-96 bg-green-700 text-white p-10 border rounded-xl drop-shadow-md space-y-5 ">
           <Image src={OutdoorSVG} alt="indoor" width={75} height={75} />
           <h3 className="text-2xl font-bold">Outdoor Plants</h3>
           <p className="lg:text-lg">
@@ -55,7 +55,7 @@ export default function Home() {
             touch to your home.
           </p>
         </div>
-        <div className="h-80 lg:h-96 w-full lg:w-96 bg-white p-10 border rounded-xl drop-shadow-md space-y-5 text-green-900">
+        <div className="h-full lg:h-96 w-full lg:w-96 bg-white p-10 border rounded-xl drop-shadow-md space-y-5 text-green-900">
           <Image src={CactusSVG} alt="indoor" width={75} height={75} />
           <h3 className="text-2xl font-bold">Plants Pots</h3>
           <p className="lg:text-lg">
