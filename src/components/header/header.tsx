@@ -1,20 +1,35 @@
-import { Button } from "@/components/ui/button";
+"use client";
 import { paths } from "@/helpers/paths";
 import Image from "next/image";
 import Link from "next/link";
 import styles from "./header.module.css";
-
+import { useEffect, useState } from "react";
+import clsx from "clsx";
 export default function Header() {
+  const [isScrolled, setIsScrolled] = useState(false);
+  useEffect(() => {
+    const handleScroll = () => {
+      window.scrollY > 200 ? setIsScrolled(true) : setIsScrolled(false);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+  const headerClass = clsx("fixed w-full z-50 py-5 duration-500", {
+    "bg-black/5 backdrop-blur-md": isScrolled,
+  });
   return (
-    <header className="fixed w-full z-50 py-5">
+    <header className={headerClass}>
       <div
         className="container mx-auto flex justify-between items-center text-white"
         style={{ fontFamily: "var(--font-lato)" }}
       >
         <Link href={paths.home}>
-          <Image src="/brand.svg" alt="Logo" width={75} height={75} />
+          <Image src="/brand.svg" alt="Logo" width={50} height={50} />
         </Link>
-        <div className="hidden md:block space-x-8 ">
+        <div className="hidden md:block space-x-8">
           <Link className={styles.link} href={paths.home}>
             Home
           </Link>
