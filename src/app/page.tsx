@@ -4,7 +4,7 @@ import { HeroImage, IndoorSVG, OutdoorSVG, CactusSVG } from "../../public";
 export default function Home() {
   return (
     <main className="space-y-20">
-      <div className="h-screen relative">
+      <section className="h-screen relative">
         <Image
           // style={{ filter: "blur(5px)" }}
           draggable={false}
@@ -35,9 +35,9 @@ export default function Home() {
             </button>
           </div>
         </div>
-      </div>
+      </section>
       {/* -------------------------------------------------------------------------------------------------------------------- */}
-      <div className="container mx-auto flex flex-col lg:flex-row justify-evenly gap-5 lg:gap-0">
+      <section className="container mx-auto flex flex-col lg:flex-row justify-evenly gap-5 lg:gap-0">
         <div className="h-full lg:h-96 w-full lg:w-96 bg-white p-10 border rounded-xl drop-shadow-md space-y-5 text-green-900">
           <Image src={IndoorSVG} alt="indoor" width={75} height={75} />
           <h3 className="text-2xl font-bold">Indoor Plants</h3>
@@ -64,8 +64,9 @@ export default function Home() {
             designs to fit any decor
           </p>
         </div>
-      </div>
+      </section>
       {/* -------------------------------------------------------------------------------------------------------------------- */}
+
     </main>
   );
 }
