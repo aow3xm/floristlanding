@@ -14,6 +14,17 @@ pnpm dev
 bun dev
 ```
 
+
+### Environment Variables
+
+Ensure you have the following environment variables set in your .env file:
+
+```
+DATABASE_URL="your-database-url"
+```
+
+These variables are required for Prisma to function correctly.
+
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
@@ -34,3 +45,8 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+
+### Additional Dependencies
+
+The project now includes additional dependencies such as @radix-ui/react-slot, class-variance-authority, clsx, lucide-react, tailwind-merge, and tailwindcss-animate. Ensure you run `npm install` or `yarn install` to install these dependencies.
