@@ -6,13 +6,13 @@ import styles from "./header.module.css";
 import clsx from "clsx";
 import useScroll from "@/hooks/useScroll";
 export default function Header() {
-  const isScrolled:boolean = useScroll(500);
-  const headerClass:string = clsx("fixed w-full z-50 py-5 duration-200", {
-    "bg-black/5 backdrop-blur-md": isScrolled,
+  const isScrolled:boolean = useScroll(250);
+  const headerClass:string = clsx("fixed w-full z-50 py-5", {
+    "bg-white border": isScrolled,
   });
-  const linkClass:string = clsx("hidden md:block space-x-8 font-semibold", {
-    "text-green-900": isScrolled,
-  });
+  const linkClass:string = clsx('hidden md:block space-x-8 font-semibold',{
+      "text-black": isScrolled,
+  })
   return (
     <header className={headerClass}>
       <nav

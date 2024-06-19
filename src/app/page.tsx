@@ -1,11 +1,11 @@
 import {CirclePlay} from "lucide-react";
 import Image from "next/image";
 import {HeroImage, IndoorSVG, OutdoorSVG, CactusSVG, HouseSVG, PlantSVG, ScissorSVG, WaterSVG} from "../../public";
+import UserCard from "@/components/user-card";
 
 export default function Home() {
     return (
         <main className="space-y-20">
-            {/* -------------------------------------------------------------------------------------------------------------------- */}
             <section className="h-screen relative">
                 <Image
                     // style={{ filter: "blur(5px)" }}
@@ -42,9 +42,6 @@ export default function Home() {
                 </div>
             </section>
             {/* -------------------------------------------------------------------------------------------------------------------- */}
-
-
-            {/* -------------------------------------------------------------------------------------------------------------------- */}
             <section className="container mx-auto flex flex-col lg:flex-row justify-between gap-5">
                 <div
                     className="h-full lg:h-96 w-full lg:w-1/3 bg-white p-10 border rounded-xl drop-shadow-md space-y-5 text-green-900">
@@ -77,9 +74,6 @@ export default function Home() {
                 </div>
             </section>
             {/* -------------------------------------------------------------------------------------------------------------------- */}
-
-
-            {/* -------------------------------------------------------------------------------------------------------------------- */}
             <section className='container mx-auto space-y-10'>
                 <h1 className='text-4xl font-bold text-center text-green-900 tracking-tight'>What We Offer To You</h1>
                 <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
@@ -104,8 +98,6 @@ export default function Home() {
                     ))}
                 </div>
             </section>
-            {/* -------------------------------------------------------------------------------------------------------------------- */}
-
             {/* -------------------------------------------------------------------------------------------------------------------- */}
             <section className='flex flex-col lg:flex-row flex-wrap'>
                 <div className='w-full lg:w-1/2'>
@@ -142,17 +134,44 @@ export default function Home() {
                     </div>
                 </div>
             </section>
-
-
             {/* -------------------------------------------------------------------------------------------------------------------- */}
-
-
-            {/* -------------------------------------------------------------------------------------------------------------------- */}
-            <section>
-
+            <section className='space-y-10'>
+                <h1 className='text-4xl font-bold text-center text-green-900 tracking-tight'>Our Gallery View</h1>
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 lg:grid-rows-2">
+                    <div
+                        className="relative col-span-1 sm:col-span-2 lg:col-span-1 lg:row-span-2 h-[400px] sm:h-[500px] lg:h-[700px] overflow-hidden">
+                        <div className="absolute inset-0">
+                            <Image className='hover:scale-105 duration-500' src='/images/gallery1.jpg' alt='hero'
+                                   layout='fill' objectFit='cover'/>
+                        </div>
+                    </div>
+                    {[2, 3, 4, 5].map((item) => (
+                        <div key={item}
+                             className="relative col-span-1 h-[400px] sm:h-[500px] lg:h-[350px] overflow-hidden">
+                            <div className="absolute inset-0">
+                                <Image className='hover:scale-105 duration-500' src={`/images/gallery${item}.jpg`}
+                                       alt='hero' layout='fill' objectFit='cover'/>
+                            </div>
+                        </div>
+                    ))}
+                </div>
             </section>
-            {/* -------------------------------------------------------------------------------------------------------------------- */}
 
+
+            {/* -------------------------------------------------------------------------------------------------------------------- */}
+            <section className='container mx-auto space-y-10'>
+                <h1 className='text-4xl font-bold text-center text-green-900 tracking-tight'>What Do They Say About
+                    Us</h1>
+                <div className="grid grid-cols-3 gap-5">
+
+                    <UserCard image={HeroImage} name={'Random'}
+                              feedback={'"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus, quaerat, quisquam! Adipisci beatae dicta doloremque eligendi et incidunt ipsa, laboriosam magni minima modi molestias nostrum placeat quae quaerat recusandae veritatis!"'}/>
+                    <UserCard image={HeroImage} name={'Random'}
+                              feedback={'"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus, quaerat, quisquam! Adipisci beatae dicta doloremque eligendi et incidunt ipsa, laboriosam magni minima modi molestias nostrum placeat quae quaerat recusandae veritatis!"'}/>
+                    <UserCard image={HeroImage} name={'Random'}
+                              feedback={'"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus, quaerat, quisquam! Adipisci beatae dicta doloremque eligendi et incidunt ipsa, laboriosam magni minima modi molestias nostrum placeat quae quaerat recusandae veritatis!"'}/>
+                </div>
+            </section>
         </main>
     );
 }
