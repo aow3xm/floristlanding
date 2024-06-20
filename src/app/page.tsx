@@ -2,6 +2,7 @@ import {CirclePlay} from "lucide-react";
 import Image from "next/image";
 import {HeroImage, IndoorSVG, OutdoorSVG, CactusSVG, HouseSVG, PlantSVG, ScissorSVG, WaterSVG} from "../../public";
 import UserCard from "@/components/user-card";
+import BlogCard from "@/components/blog-card";
 
 export default function Home() {
     return (
@@ -162,7 +163,7 @@ export default function Home() {
             <section className='container mx-auto space-y-10'>
                 <h1 className='text-4xl font-bold text-center text-green-900 tracking-tight'>What Do They Say About
                     Us</h1>
-                <div className="grid grid-cols-3 gap-5">
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
 
                     <UserCard image={HeroImage} name={'Random'}
                               feedback={'"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus, quaerat, quisquam! Adipisci beatae dicta doloremque eligendi et incidunt ipsa, laboriosam magni minima modi molestias nostrum placeat quae quaerat recusandae veritatis!"'}/>
@@ -172,6 +173,57 @@ export default function Home() {
                               feedback={'"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus, quaerat, quisquam! Adipisci beatae dicta doloremque eligendi et incidunt ipsa, laboriosam magni minima modi molestias nostrum placeat quae quaerat recusandae veritatis!"'}/>
                 </div>
             </section>
+
+            <section>
+                <div className="relative h-96 text-white">
+                    <Image className="-z-50 brightness-50" src="/images/gallery3.jpg" alt="leave-email" fill
+                           objectFit="cover"/>
+                    <div
+                        className="container mx-auto w-full h-full flex flex-col lg:flex-row justify-center items-center gap-5">
+                        <div className="w-full lg:w-2/5">
+                            <h1 className="text-3xl font-semibold leading-10">
+                                Enter Your Email Address For Our Mailing Promo Or Other Interesting Things
+                            </h1>
+                        </div>
+                        <div className="w-full lg:w-3/5">
+                            <form action="">
+                                <div className="flex gap-2">
+                                    <input
+                                        style={{fontFamily: "var(--font-raleway)"}}
+                                        className="w-4/5 p-3 rounded border bg-transparent backdrop-blur-sm placeholder:text-white"
+                                        placeholder="Enter your email"
+                                        type="email"
+                                    />
+                                    <button className="bg-green-900 hover:bg-green-950 duration-75 rounded w-1/5"
+                                            type="submit">
+                                        Submit
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* -------------------------------------------------------------------------------------------------------------------- */}
+
+            <section className='container mx-auto space-y-10'>
+                <h1 className='text-4xl font-bold text-center text-green-900 tracking-tight'>Interesting Blogs To
+                    Read</h1>
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-14">
+                    <BlogCard image={HeroImage}
+                              title='Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos, sed.'
+                              description=' Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus accusantium aliquam cupiditate debitis doloribus, harum ipsum iure mollitia nihil officia quisquam saepe sint, tempora! Cupiditate dolorum est facere nesciunt perspiciatis?'
+                              date='today'/>
+                    <BlogCard image={HeroImage} title=' Lorem ipsum dolor sit amet, consectetur.'
+                              description='Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque consequatur delectus doloremque exercitationem ipsam itaque obcaecati odio, qui quibusdam quidem? Aspernatur atque cum cupiditate doloremque, dolores eius inventore quaerat sapiente.'
+                              date='today'/>
+                    <BlogCard image={HeroImage} title='Lorem ipsum dolor sit amet, consectetur adipisicing elit.'
+                              description='Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aperiam corporis ducimus eius enim esse expedita fugiat fugit illum in incidunt ipsa iusto magni neque nulla officia perspiciatis praesentium quos similique, temporibus totam vero vitae. Aliquam amet aut cumque, debitis exercitationem expedita, impedit, ipsum placeat porro quas reiciendis voluptatem voluptatibus.'
+                              date='today'/>
+                </div>
+            </section>
         </main>
+
     );
 }
